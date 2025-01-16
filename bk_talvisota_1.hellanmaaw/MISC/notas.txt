@@ -1,0 +1,42 @@
+Custom loadout:
+
+- fnc_dressAs.sqf > dressAs_rol 
+    - vacia al pj
+    - asigna rol (player setVariable ["rol", "srg", true];) <- usado despues en el getWeapon_
+    - fnc_uniforms.sqf > getUniform_rol (uniforme + casco)
+    - mochila
+    - cosmetico
+    - llama a fnc_equipments > getEquipment_tipo
+        _basic -> suministros medicos en uniforme
+        _medic -> suministros medicos para medico en uniforme y mochila
+        _paraMedic -> igual a medic, pero con menos vendas en mochila y 1 granada
+        _sargent -> silvato y silvato de trinchera
+        _private -> silvato de trinchera
+    - llama a fnc_weapons > getTipoGranada (getFrags 2 frags, getSmoke ....) las guarda en la mochila
+        
+
+- fnc_weapons.sqf > getWeapon_arma (getWeapon_boltRifle, getWeapon_smg...)
+    - chaleco
+    - arma 
+    - [script arma]
+
+definiciones
+- def_gears.sqf > define todos los uniformes, chalecos, mochilas y cosmeticos
+    - TIPO_ROL 
+        - TIPO -> UNIFORM / VEST / BACKPACK / GOOGLE / NVG
+        - ROL -> siempre 3 letras y en ingles: 
+            SRG, SLD, PRI (cabo), MED, PAR (para-medic) ...
+            si es un apoyo _A -> HMG_A = asistente mg pesada
+           
+rols: 3 letra + _a en caso de ser apoyo
+sld:   fusilero
+pri:   cabo
+srg:   sargento
+hmg:   mg pesada (script)
+hmg_a: asistente mg pesada
+hat:   at pesado (script)
+hat_a: asistente at pesado 
+med:   medico
+par:   para-medico
+sni:   sniper
+eng:   ingeniero

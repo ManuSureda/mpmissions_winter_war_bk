@@ -1,0 +1,337 @@
+21/09/18 Cambio en el manejo de allowDamage en SAC_fnc_moveUnitsToPlayerPosition.
+21/09/18 Cambio en el init de COP para que la IA aliada no sea invulnerable.
+21/09/18 sac_downed_players_markers evaluaba por error a todas la unidades, ahora evalua solo a allPlayers.
+21/09/18 Se agregó sac_players_markers al init de COP para las misiones propias.
+
+21/10/12 SAC_fnc_teleporter no informa más cuando teleporta un vehículo (para usar Duala en FIST).
+
+21/10/12 sac_downed_players_markers ahora excluye unidades que den alive == false (para evitar que los players que mueren sigan con el marcador).
+21/10/12 Se agregó soporte para las bolsas en la cabeza a los rehenes.
+
+21/10/14 Se corrigió error que tildaba la rutina de mover players a mi posición.
+21/10/14 Se cambió el perfil de unidades "BIS_TANOA". Ahora las BLUFOR son las mismas que en Altis, para que se aplique el loadout de GEAR (ya que no está configurado para las de Tanoa)
+21/10/14 Se cambió la animación de EXPLO (de "Medic" a "MedicOther").
+
+21/10/14 SQUAD ahora marca las unidades del grupo que estén inconcientes.
+21/10/14 SQUAD ahora agrega SAC_fnc_addHandleDamageWithUnconscious a las unidades que crea.
+21/10/14 Se agregó la función SAC_fnc_addHandleDamageWithUnconscious a la librería.
+21/10/14 Se agregó la interacción "Revivir", para revivir a las unidades inconcientes (sólo inconcientes de SAC_fnc_addHandleDamageWithUnconscious).
+21/10/14 Los médicos ahora pueden revivir a los inconcientes de SAC_fnc_addHandleDamageWithUnconscious.
+
+21/10/16 Tracker ahora puede ver botes.
+
+21/10/19 sac_interact permite bloquear y desbloquear vehículos.
+21/10/19 SQUAD ahora no acepta subir IA a vehículos bloqueados.
+21/10/19 Se agregaron sonidos a SACSA3 para activar y desactivar alarma de auto.
+
+21/10/25 El umbral para evitar que las unidades mueran se bajó de 1 a 0.9 (como antes).
+
+21/10/25 Se aumentó la distancia para algunas interacciones con personas (dar armas y chalecos).
+21/10/25 La orden de curar no se da a los médicos que estén inconcientes.
+21/10/25 Los médicos pueden entrar en la lista de pacientes de otros médicos, si están inconcientes.
+21/10/25 SAC_fnc_findBuilding no funcionaba si usaba el parámetro "closest" (afectaba a "get in building" y "planning mode").
+21/10/25 Se agregaron 4 vehículos de RHS, y dos camiones del CSAT Pacific, al perfil de vehículos "BIS_GUER".
+21/10/25 Se corrieron varios errores y se mejoró el sistema que maneja la curación de la IA, incluyendo el sistema que los pone inconcientes en vez de morir, y el trabajo de los médicos.
+
+21/10/28 SAC_fnc_addGarrisons buscaba "House" y no encontraba los árboles de snipers del Unsung, así que se revirtió a "Building".
+21/10/28 SAC_fnc_findBuilding buscaba "House" y no encontraba los árboles de snipers del Unsung, así que se revirtió a "Building".
+
+21/10/30 SAC_fnc_findBuilding no funcionaba cuando no se proveía un array de edificios (afectaba a COP CSAR).
+
+21/11/01 Cuando un médico estaba detenido con Alt-H, si estaba herido él, y se le daba la órden de curar, sólo se curaba él, y luego toda esa instancia quedaba a la espera de que se cancelara el doStop con alguna órden de movimiento.
+
+21/11/03 Muchos cambios en SQUAD, para que tenga en cuenta las unidades "incapacitated".
+
+21/11/06 Se corrigieron muchos errores introducidos con el refactoreo de SQUAD.
+
+21/11/09 Se agregó línea al init de vietnam para que remueva los detectores de minas.
+
+21/11/21 Curar desde la consola ahora también tiene en cuenta el sistema de inconcientes que hice para la IA.
+21/11/21 Revivir desde Interact, también cura a la unidad.
+21/11/21 Se subió al máximo la skill de la IA bajo mando del jugador.
+21/11/21 Se bajó la skill de la IA enemiga.
+
+21/11/22 Se corrigió error en perfil civil de 3CB Africa (las unidades y los vehículos eran EAST).
+21/11/22 COP_DKT ahora soporta crear garrisons cerca del edificio del objetivo.
+21/11/22 COP_CSAR ahora soporta crear garrisons cerca del edificio del helicóptero.
+21/11/22 COP_DKT ahora soporta definir el texto del hint de inicialización.
+21/11/22 COP_DKT ahora soporta definir el texto que se muestra cuando termina. También se puede hacer que ese texto se agregue al diario.
+21/11/22 Se agregó código defensivo a TAC (para que compruebe que pueda enviar helicóptero, tanques, APCs, e IFVs).
+21/11/22 Corregido: DKT usaba nearestBuilding para marcar los edificios. Ahora usa la lista de edificios que devuelve createGarrisons. Fallaba en Duala y otros mapas.
+
+21/11/25 Se muestra la IA inconciente de otros jugadores.
+21/11/25 Se agregó "Salir del Vehiculo" a sac_interact (para cuando el vehículo explota y el player está invulnerable).
+
+21/11/30 Se agregó soporte para crear IFV desde marcador de COP.
+
+21/12/03 Se corrigió error en CSAR (si las unidades estaban capturadas, y no encontraban edificio, no se las convertía en rehenes).
+
+21/12/05 Los médicos no vuelven más a su posición inicial cuando terminan de curar.
+
+21/12/07 Se agregaron a SQUAD las órdenes "Heal Player", y "Heal Pointed Unit".
+
+21/12/21 SAC_fnc_netSay3D ahora soporta (y requiere) el parámetro "distancia" (eso permite amplificar los sonidos reproducidos).
+21/12/21 Se dejó se usar SAC_fnc_MPhint en SAC_COP_DKT, porque sólo funcionan si COP corre en un server dedicado.
+21/12/21 Se implementó entrada en diario y texto de systemChat en SAC_COP_REVEAL.
+
+22/01/05 Se corrigió un error en la definición de SAC_GEAR_preferred_nvg, cuando no estaba cargado TFL
+
+22/01/11 Corregido: SAC_fnc_MPhint, SAC_fnc_MPhintC y SAC_fnc_MPsystemChat solo se ejecutaban en todos los clientes, si se ejecutaba en un servidor dedicado.
+22/01/11 Cambiado: SAC_COP y SAC_interact vuelven a usar SAC_fnc_MPhint y SAC_fnc_MPsystemChat (en vez de remoteExec).
+22/01/11 Corregido: Dar arma a una unidad no local no tenía efecto porque addWeapon requiere parámetros locales (ahora se ejecuta SAC_GEAR_fnc_orderTakeWeaponFromDeadUnit en donde la unidad sea local, con remoteExec).
+22/01/11 Corregido: Error en SAC_fnc_putUnitsInBuilding. Cuando no se pasaba "hardcore_stop", el líder quedaba con "hardcore_stop".
+22/01/11 Corregido: Inconsistencia en la distancia para poder dar arma y chaleco (SAC_interact).
+
+22/01/20 Cambiado: visualCaching ahora también oculta las unidades muertas.
+22/01/20 Cambiado: Los marcadores de COP pueden crear unidades en cualquier parte (no usan ninguna "blacklist").
+
+22/01/30 Corregido: SAC_fnc_MPhint, SAC_fnc_MPhintC y SAC_fnc_MPsystemChat se ejecutaban en los clientes JIP.
+
+22/02/19 Mejorado: El código de DKT no tenía en cuenta que pudiesen no encontrarse edificios para los "decoy_groups".
+22/02/19 Mejorado: sac_fnc_addGarrisons tenía una asignación redundate de _isolatedString.
+22/02/19 Corregido: El parámetro SAC_COP_CSAR_prefer_survivors_in_cities no era tomado en cuenta por CSAR.
+22/02/19 Corregido: DKT ahora busca los edificios para el objetivo y los "decoys", con y sin la propiedad "isolated".
+22/02/19 Corregido: DKT ahora busca los edificios para el informante y el "extraction guy", con y sin la propiedad "isolated".
+22/02/19 Corregido: DKT seguía usando nearestBuilding para el informante y el "extraction guy". Ahora usa la lista de edificios ocupados devuelta por createGarrisons.
+
+22/02/20 Mejorado: Teleport Reconect ahora usa "player setPosATL (getPosATL _unit)". Antes el jugador quedaba debajo de la unidad destino, si la misma estaba sobre alguna superficie (como un edificio).
+22/02/20 Mejorado: SAC_fnc_moveUnitsToPlayerPosition ahora usa "_x setPosATL (getPosATL player)". Antes la unidad quedaba debajo del jugador, si el mismo estaba sobre alguna superficie (como un edificio).
+22/02/20 Mejorado: sac_players_markers ahora usa "getPosATLVisual _x". Antes el indicador quedaba al nivel del suelo aunque el jugador estuviera sobre el nivel del terreno (como en un edificio).
+22/02/20 Mejorado: THU "Release Control" apaga el motor antes de borrar a la tripulación.
+22/02/20 Agregado: THU "Turn Engine OFF".
+
+22/02/28 Cambiado: Se subió la aimingAccuracy de 0.1 a 0.2 de la IA enemiga (la skillFinal coincide con esos mismos valores).
+22/02/28 Mejorado: sac_fnc_putUnitsInBuilding ahora usa setPosATL, porque todos los parámetros están en ese formato, y no veo necesidad de convertir todo a ASL como se hacía hasta ahora.
+22/02/28 Mejorado: Posible optimización de SAC_fnc_buildingPos.
+22/02/28 Mejorado: sac_fnc_putUnitsInBuilding ahora detiene a las unidades antes de moverlas a sus posiciones (para evitar que se muevan entre el setPos, y la orden de detenerse que le debería seguir).
+22/02/28 Mejorado: Las "garrisons" creadas por el marcador "FORTIFY" esperan 5 segundos antes de activar la simulación dinámica.
+
+22/03/01 Mejorado: El chequeo de LZ de THU ahora tiene en cuenta las "bounding spheres" de árboles y edificios.
+
+22/03/03 Agregado: GEAR reconoce las clases de las fuerzas especiales rusas de CONTACT.
+
+22/03/26 Cambiado: Se adaptó GEAR al paso de "cod_bump.pbo" de @Powerrangers a @CGFS.
+
+22/04/02 Mejorado: CSAR y DKT, ahora usan una lista unificada de edificios no permitidos para NPCs interactivos, y ninguna para las demás garrisons.
+
+22/04/04 Corregido: init.sqf no pasaba a TAC las clases de helicópteros, para las dos instancias consideradas milicia.
+22/04/04 Corregido: init.sqf no pasaba a TAC la clase del piloto de helicóptero, para las dos instancias consideradas milicia.
+22/04/04 Mejorado: fnc_findSafePos ahora comprueba las "bounding sphere boxes" de árboles y edificios.
+22/04/04 Mejorado: fnc_findLZ y fnc_findSafePos, ahora comprueban las "bounding boxes" de los cables de tensión y sus torres.
+22/04/04 Agregado: Se agregó la órden para curar a una unidad seleccionada.
+
+22/04/04 Cambiado: Se bajó la probabilidad de vehículos con AT, en el perfil BIS_GUER.
+22/04/04 Cambiado: Se aumentó la probabilidad de vehículos con AT, en el perfil 3CB_TAKISTAN.
+22/04/04 Cambiado: Se bajó la probabilidad de vehículos con AT, en el perfil 3CB_CHERNARUS.
+22/04/04 Cambiado: Se aumentó la probabilidad de vehículos con AT, en el perfil 3CB_AFRICA.
+22/04/04 Agregado: Se agregaron algunas Pickups nuevas a los perfiles 3CB_TAKISTAN y 3CB_CHERNARUS.
+22/04/04 Corregido: Se podía curar unidades incapacitadas a cualquier distancia.
+22/04/04 Agregado: Se implementó la interacción "Remover Caja Negra".
+22/04/04 Agregado: Se agregó la interacción "Remover Caja Negra" al helicóptero de CSAR.
+
+22/04/06 Agregado: Se implementaron las interacciones "Terminar Enlace Satelital" y "Apagar Radar".
+22/04/06 Cambiado: Se aumentó el tamaño de la letra de fnc_titleText.
+
+22/04/08 Mejorado: El helicóptero en CSAR no explota más por los objetos con los que colisiona, en el lugar en el que es creado.
+22/04/08 Cambiado: Las unidades reclutadas quedan incapacitadas en vez de morir.
+22/04/08 Cambiado: Las unidades que tienen el manejador de daño con incapacitación en vez de morir, son marcadas con una variable (para prevenir que se carguen dos manejadores).
+
+22/04/09 Corregido: "Dar Arma" ahora usa weapons, en lugar de currentWeapon (por si la unidad tiene el arma dada en la espalda).
+22/04/09 Cambiado: Solo se puede "Dar Arma" a unidades del grupo del jugador (para reducir las interacciones fuera de contexto).
+22/04/09 Cambiado: Solo se puede "Dar Chaleco y Arma" a unidades del grupo del jugador (para reducir las interacciones fuera de contexto).
+22/04/09 Agregado: Se agregó la interacción "Abrir Inventario" (sólo si no está ACE cargado).
+22/04/09 Cambiado: Se permite el nombre especial "nobody" (como equivalente a "anybody") en la interacción "Identificar".
+22/04/09 Mejorado: Se previenen las interacciones "Bloquear" y "Desbloquear" si al momento de hacer click otro jugador ya bloqueó o desbloqueó, respectivamente.
+22/04/09 Agregado: Soporte para control de códigos de acceso para interacciones "Usar", "Terminar Enlace Satelital" y "Apagar Radar".
+22/04/09 Agregado: Soporte para agregar códigos de acceso aleatorios a dispositivos vinculados.
+22/04/09 Agregado: Interacción para que "Interrogar" pueda revelar códigos de acceso.
+
+22/04/10 Corregido: SAC_GEAR_fnc_rearm no manejaba bien los AT descartables.
+22/04/10 Agregado: Interacción para que "Usar" pueda revelar códigos de acceso.
+
+22/04/11 Corregido: Se cambia el método para conservar el loadout después del respawn. El anterior, según algunos reportes, no funcionaba.
+22/04/11 Agregado: Se introdujeron dos parámetros a COP_DKT, para poder indicarle la posición de los grupos "decoy" al algoritmo.
+
+22/04/12 Corregido: Si se daba la órden 5-G-A, y al llegar al vehículo la posición deseada estaba ocupada, y el vehículo no tenía una posición "commander", la unidad no lograba subirse al vehículo.
+22/04/12 Corregido: SAC_SQUAD_order_group_move_line no da error de división por zero, cuando la lista de unidades incluye una sola.
+
+22/04/22 Cambiado: sac_civilian_traffic ahora comprueba que no haya unidades del lado del jugador, antes de borrar unidades y vehículos (hasta ahora comprobaba sólo jugadores).
+22/04/22 Cambiado: sac_civilian_traffic ahora limpia cada 2 minutos (hasta ahora lo hacía cada 10 segundos).
+22/04/22 Corregido: Borrar las unidades muertas dentro de los vehículos en sac_civilian_traffic podía fallar.
+22/04/22 Cambiado: sac_insurgency_traffic ahora comprueba que no haya unidades del lado del jugador, antes de borrar unidades y vehículos (hasta ahora comprobaba sólo jugadores).
+22/04/22 Cambiado: sac_insurgency_traffic ahora limpia cada 2 minutos (hasta ahora lo hacía cada 10 segundos).
+22/04/22 Cambiado: sac_insurgency_traffic ya no genera y borra, todas las unidades que va a espawnear, durante la inicialización. Si hay stuttering volver a hacerlo.
+22/04/22 Corregido: Borrar las unidades muertas dentro de los vehículos en sac_insurgency_traffic podía fallar.
+22/04/22 Corregido: sac_military_traffic NO CORRIA NUNCA (un error de brackets hacía que la inicialización saliera sin mostrar ningún error).
+22/04/22 Cambiado: sac_military_traffic ahora comprueba que no haya unidades del lado del jugador, antes de borrar unidades y vehículos (hasta ahora comprobaba sólo jugadores).
+22/04/22 Cambiado: sac_military_traffic ahora limpia cada 2 minutos (hasta ahora lo hacía cada 10 segundos).
+22/04/22 Corregido: Borrar las unidades muertas dentro de los vehículos en sac_military_traffic podía fallar.
+22/04/22 Cambiado: sac_tac_multi_instance_202105 ahora comprueba que no haya unidades del lado del jugador, antes de borrar unidades y vehículos (hasta ahora comprobaba sólo jugadores).
+22/04/22 Corregido: Borrar las unidades muertas dentro de los vehículos en sac_tac_multi_instance_202105 podía fallar.
+
+22/04/23 Corregido: El médico usaba sólo la acción "heal" cuando se tenía que curar él mismo, lo cual a veces no lo dejaba al 100%.
+
+22/04/26 Agregado: FORTIFY toma un cuarto parámetro, para indicarle grado de ocupación de las casas.
+
+22/04/27 Corregido: SAC_fnc_spawnGroup no podía crear más unidades que las del array de clases.
+
+22/04/28 Mejorado: SAC_fnc_addGarrisons ahora puede ir bajando el requisito de los edificios, según un parámetro. Mejora la performance.
+22/04/28 Corregido: SAC_COP_fnc_createGarrisonedArea podía crear menos grupos de los requeridos.
+22/04/28 Mejorado: SAC_COP_fnc_dyn_CSAR ocupa mejor los edificios, aprovechando la flexibilidad agregada a SAC_fnc_addGarrisons.
+22/04/28 Mejorado: SAC_COP_fnc_dyn_killTarget ocupa mejor los edificios, aprovechando la flexibilidad agregada a SAC_fnc_addGarrisons.
+22/04/28 Cambiado: Aplicar el SAC_SQUAD_loadoutProfile al grupo, también incluye al jugador.
+
+22/05/03 Corregido: Cuando se intentaba subir unidades a un vehículo, no se tenía en cuenta que pudieran estar bloqueadas algunas posiciones.
+22/05/03 Mejorado: El menu de curar por consola, ahora marca en rojo las unidades inconcientes.
+
+22/05/17 Agregado: SAC_fnc_MPtitleText.
+22/05/17 Agregado: La interacción "Desactivar" a sac_interact, y la posibilidad de agregarla a objetos, en sac_cop.
+22/05/17 Mejorado: Algunas interacciones ahora usan SAC_fnc_MPtitleText, para mostrar el efecto de la acción a todos los jugadores.
+
+22/05/21 Corregido: El sistema de códigos de acceso no podía crear la entrada en el diario de todos los jugadores.
+22/05/21 Cambiado: Para corregir el problema con la entrada de diario con los códigos de acceso, SAC_passwords_name ahora es obligatorio para las misiones que usen códigos.
+
+22/05/24 Corregido: El algoritmo del médico esperaba unitReady o moveToFailed. Ahora puede salir si ya está al lado del paciente.
+22/05/24 Corregido: El helicóptero de CSAR debería seguir siendo susceptible a dañarse por contacto con los objetos del terreno, porque disableCollisionWith solo permite referenciar un objeto. Se invirtieron los parámetros para solucionarlo.
+
+22/05/25 Corregido: Los médicos de a pié, no tenían en cuenta unidades remotas, y la curación fallaba.
+
+22/05/26 Corregido: Si estaba cargado ACE, la consola no podía sacar de incapacitados a los heridos por mi sistema médico.
+22/05/26 Mejorado: SAC_fnc_sendTroopsByLand ahora intenta mover 150 mts el vehículo, cuando detecta que no se movió, antes de borrarlo.
+22/05/26 Corregido: SAC_fnc_sendInterceptor borraba el vehículo porque no se movía, aun cuando para el controlador, dejarlo en el lugar era el comportamiento deseado.
+
+22/06/02 Mejorado: "Bloquear", "Desbloquear", y "Abrir Inventario", ahora soportan "Ship".
+22/06/02 Mejorado: SAC_fnc_groupsOfPlayers ahora soporta excluir unidades en el agua. Se corrigieron todas las rutinas que lo usan, para incluir el nuevo parámetro.
+22/06/02 Corregido: TAC, si por algun motivo no podía mandar "INF_FOOT", entraba en un bucle infinito.
+
+22/06/04 Corregido: Ambush no podía generar la infantería que respondía a un IED, porque tomaba la posición de un trigger que era borrado por una función que corría en paralelo.
+
+22/06/15 Agregado: Se pueden agregar marcadores con el texto "SAC_CTS_GREEN_ZONE", para impedir la generación de CTS.
+
+22/07/15 Cambiado: sac_downed_players_markers ahora sólo muestra los jugadores del mismo grupo.
+
+22/08/25 Agregado: SAC_fnc_initAllUnits indica que terminó con la variable SAC_INIT_ALL_UNITS_FINISHED.
+
+22/09/25 Agregado: Soporte para poner unidades en un edificio que no tenía posiciones definidas (Land_d_House_Big_01_V1_F).
+
+22/09/26 Agregado: COP_MAKEUNCONCIOUS y COP_MAKESOMEUNCONCIOUS.
+22/09/26 Agregado: COP_MEDICAL (para que las unidades sincronizadas queden inconcientes en vez de morir).
+
+22/10/12 Corregido: Al reclutar unidades existentes, no se les desactivaba la fatiga.
+
+22/10/16 Corregido: "Entry Route, Insert, Waiting Point" no se habilitaba aunque las condiciones se cumplieran.
+
+22/10/20 Cambiado: Las unidades del jugador son invulnerables al fuego del mismo grupo.
+22/10/20 Cambiado: El jugador es invulnerable al fuego de las unidades de su grupo.
+
+22/10/27 Agregado: Soporte para reproducir música cuando se está inconciente por el ACE.
+
+22/11/03 Mejorado: Las unidades que se escapan del jugador ahora necesitan menos tiempo para rendirse si un jugador las alcanza.
+
+22/11/15 Agregado: COP_ADDTRACKER.
+
+22/12/06 Cambiado: A prueba uiSleep en vez de sleep, en SAC_fnc_musicSource.
+22/12/06 Corregido: Dos médicos arriba de un mismo vehículo no se repartían a los heridos.
+
+22/12/29 Cambiado: Los marcadores que ocupan edificios no tienen en cuenta al jugador.
+
+23/01/08 Corregido: Se les daba binocular y secundaria a la IA, si se vestía unidades del tipo "SL".
+
+23/01/10 Agregado: Se pueden definir las clases de los sobrevivientes en CSAR.
+
+23/02/28 Agregado: SAC_fnc_addPrimaryMagazines.
+
+23/04/11 Agregado: Soporte para saltos HALO.
+23/04/11 Cambiado: THU ahora usa los nuevos marcadores de Contact.
+
+23/04/12 Corregido: Tracker contaba allDead, en vez de allDeadMen.
+23/04/12 Mejorado: Rediseño del hint de Tracker.
+23/04/12 Agregado: Sistema de "garbage collector" para unidades y grupos.
+23/04/12 Agregado: COP corre el nuevo "garbage collector".
+
+23/04/12 Mejorado: La llamada a spawnVehicle desde sendCar ahora marca al grupo como "deleteGroupWhenEmpty".
+
+23/04/12 Mejorado: Civilian Traffic no trata de borrar los grupos vacios porque ahora se crean como "deleteGroupWhenEmpty".
+23/04/12 Mejorado: Civilian Traffic no trata de borrar la tripulacion del vehiculo que va a borrar (era inutil).
+23/04/12 Mejorado: Civilian Traffic baja de los vehiculos a las unidades muertas antes de borrarlas (deleteVehicleCrew no funciona si el vehiculo esta destruido).
+
+23/04/12 Mejorado: La llamada a createGroup desde sendGroup ahora marca al grupo como "deleteGroupWhenEmpty".
+
+23/04/12 Mejorado: (SAC_AMB) La llamada a spawnVehicle desde spawnTechnical ahora marca al grupo como "deleteGroupWhenEmpty".
+23/04/12 Mejorado: (SAC_AMB) La llamada a createGroup desde spawnAirThreat ahora marca al grupo como "deleteGroupWhenEmpty".
+23/04/12 Mejorado: Ambush no trata de borrar los grupos vacios porque ahora se crean como "deleteGroupWhenEmpty".
+
+23/04/12 Mejorado: Se cambio el codigo para borrar unidades, en irrelevantItems, para que mejore el borrado de unidades en vehiculos.
+
+23/04/12 Mejorado: Se cambio el codigo para borrar unidades, en garbageCollector, para que mejore el borrado de unidades en vehiculos.
+
+23/04/12 Mejorado: Se cambio el codigo para borrar unidades, en Dynamic Garrisons, para que mejore el borrado de unidades en vehiculos.
+
+23/04/12 Mejorado: (IPS) Los grupos de las patrullas se generan como "deleteGroupWhenEmpty".
+23/04/12 Mejorado: (IPS) Se cambio el codigo para borrar unidades para que mejore el borrado de unidades en vehiculos.
+
+23/04/12 Mejorado: (ITS) Se aplicaron los mismo cambios que a Civilian Traffic.
+
+23/04/12 Mejorado: (MTS) Se aplicaron los mismo cambios que a Civilian Traffic.
+23/04/12 Mejorado: (MTS) Se cambio la frecuencia de limpieza usando el sistema de Civilian Traffic.
+
+23/04/12 Mejorado: (SQUAD) La orden 'dismiss' ahora tambien funciona con unidades en vehiculos.
+
+23/04/12 Mejorado: createGroup en sendHunterInfantry crea los grupos como "deleteGroupWhenEmpty".
+
+23/04/12 Mejorado: (TAC) Se cambio el sistema de borrado de unidades y vehiculos, aplicando el mismo algoritmo que Civilian Traffic.
+
+23/04/12 Mejorado: getNearestSafeInfGroup usa groups _side, en vez de allGroups.
+23/04/12 Mejorado: TAC usa groups _side, en vez de allGroups, cuando busca unidades en combate.
+
+23/04/16 Agregado: Medicos curan automaticamente por proximidad.
+23/04/16 Agregado: Las unidades incapacitadas se van desestabilizando, y si no llega un medico a la zona, mueren.
+23/04/16 Agregado: El icono que marca las unidades incapacitadas, es de color rojo si no hay un medico cerca, y azul si lo hay.
+23/04/16 Agregado: Los medicos son invencibles (a prueba).
+
+23/04/17 Mejorado: (CTS) Las unidades muertas ahora se borran mucho mas cerca del jugador.
+23/04/17 Mejorado: (DGS) Las unidades muertas ahora se borran mucho mas cerca del jugador.
+23/04/17 Mejorado: (IPS) Las unidades muertas ahora se borran mucho mas cerca del jugador.
+23/04/17 Mejorado: (ITS) Las unidades muertas ahora se borran mucho mas cerca del jugador.
+23/04/17 Mejorado: (MTS) Las unidades muertas ahora se borran mucho mas cerca del jugador.
+23/04/17 Mejorado: (TAC) Las unidades muertas ahora se borran mucho mas cerca del jugador.
+23/04/17 Mejorado: El Garbage Collector de COP ahora borra las unidades muertas mucho mas cerca del jugador.
+
+23/04/17 Cambiado: El icono que identifica a las unidades incapacitadas.
+23/04/17 Cambiado: Los pilotos de los helicopteros ahora tienen el "trait" medico (para que simulen capacidades de "CASE EVAC" en conjunto con el nuevo sistema medico).
+
+23/04/21 Corregido: Los marcadores sobre las unidades incapacitadas seguian estando aunque la unidad hubiera muerto.
+
+23/04/21 Cambiado: Ahora las unidades incapacitadas permanecen estables mientras haya aliados cerca (aunque solo el medico las saca de ese estado).
+23/04/21 Cambiado: El icono de las unidades incapacitadas puede ser naranja, indicando estable pero sin medico cerca.
+
+23/04/21 Agregado: Capacidad para cargar y descargar heridos en la espalda del jugador.
+23/04/21 Agregado: Capacidad para subir a un vehiculo la unidad incapacitada cargada por el jugador.
+
+23/05/15 Corregido: Todas las funciones de SAC_TRACK se redefinian cada vez que se abria la consola.
+
+23/06/07 Cambiado: La orden asaltar edificio, ahora asigna las posiciones en el orden en el que las devuelve el comando buildingPos.
+23/06/07 Agregado: Circulo verde alrededor de los medicos (para marcar el area de efecto).
+23/06/07 Agregado: Circulo alrededor del jugador (para marcar el area de efecto de sus ordenes).
+23/06/07 Agregado: COP_MAKEHOSTAGE marca las unidades para que no las borre el "garbage collector".
+23/06/07 Agregado: CSAR marca las unidades para que no las borre el "garbage collector".
+23/06/07 Agregado: DKT marca las unidades para que no las borre el "garbage collector".
+
+23/06/11 Agregado: Orden para elegir la velocidad de movimiento de las unidades del grupo del jugador.
+23/06/11 Cambiado: Los grupos en edificios, y que no pueden salir, ahora tienen "enableAttack" en "false".
+
+23/06/14 Agregado: Sistema universal de "loadouts".
+
+23/06/19 Agregado: Marcadores MORTAR, ARTY y SENDINFANTRY a COP.
+
+23/06/21 Agregado: Marcadores SENDMOTORINFANTRY y SENDHELIINFANTRY a COP.
+
+23/06/22 Agregado: Marcadores SENDAPC, SENDIFV, y SENDTANK a COP.
+23/06/22 Mejorado: TAC ahora usa las mismas funciones que los nuevos marcadores de COP para enviar refuerzos.
+
+23/09/17 Corregido: SAC_fnc_sendTroopsByHeli, cuando el spawn era sobre tierra, algunas de las tropas morian o resultaban heridas.
+
+
+
+
+
