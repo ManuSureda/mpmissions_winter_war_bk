@@ -6,7 +6,7 @@ getUniform_sld = {
 	params ["_player"];
 
 	if (random 1 < 0.55) then {
-		_cap = selectRandom ["bl","gr"];
+		_cap = selectRandom ["bl","bl","bl","gr"];
 		switch (_cap) do {
 			case "bl": { 
 				_player forceAddUniform selectRandom [

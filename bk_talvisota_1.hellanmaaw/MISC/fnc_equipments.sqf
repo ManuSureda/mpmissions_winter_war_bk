@@ -49,9 +49,17 @@ getDeployBikeAction = {
 			{
 				[1.5, [], {
 					_bike = "fow_v_truppenfahrrad_ger_heer" createVehicle position player;
+					/*
 					_bike setPos [(getPos player select 0), (getPos player select 1) + 3, (getPos player select 2)];
 					_dir = vectorDir player;
 					_bike setVectorDir _dir;
+					*/
+					// Obtener posición frente al jugador
+					private _offset = (vectorDir player) vectorMultiply 2; // Desplazamiento de 2 metros al frente
+					private _newPos = (getPos player) vectorAdd _offset;
+					_bike setPos _newPos;
+					
+					_bike setVectorDir (vectorDir player);
 				}, {hint "Failure!"}, "Desplegando"] call ace_common_fnc_progressBar;
 			},nil,1.5,true,true,"","_target == _this",5,false,"",""
 		];
@@ -153,9 +161,14 @@ getEquipment_hmg_a = {
 
 			[3, [], {
 				_box = "NORTH_molotov_crate" createVehicle position player; 
-				_box setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)]; 
-				_box addItemCargoGlobal ["NORTH_200Rnd_762mm_Maxim_Inf", 3];
+				//_box setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)]; 
 
+				private _offset = (vectorDir player) vectorMultiply 2; // Desplazamiento de 2 metros al frente
+				private _newPos = (getPos player) vectorAdd _offset;
+				_box setPos _newPos;
+				_box setVectorDir (vectorDir player);
+
+				_box addItemCargoGlobal ["NORTH_200Rnd_762mm_Maxim_Inf", 3];
 			}, {hint "Failure!"}, "Desplegando"] call ace_common_fnc_progressBar;
 
 			// despues de usar, se elimina la accion
@@ -180,7 +193,14 @@ getEquipment_hat_a = {
 
 			[3, [], {
 				_box = "NORTH_molotov_crate" createVehicle position player; 
-				_box setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)]; 
+
+				// _box setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)]; 
+				
+				private _offset = (vectorDir player) vectorMultiply 2; // Desplazamiento de 2 metros al frente
+				private _newPos = (getPos player) vectorAdd _offset;
+				_box setPos _newPos;
+				_box setVectorDir (vectorDir player);
+
 				_box addItemCargoGlobal ["NORTH_10Rnd_20mm_L39_T_Inf", 3];
 
 			}, {hint "Failure!"}, "Desplegando"] call ace_common_fnc_progressBar;
@@ -207,6 +227,7 @@ getEquipment_eng = {
 
 	_player addItemToBackpack "ACE_LIB_FireCord";
 	_player addItemToBackpack "ACE_LIB_LadungPM";
+	_player addItemToBackpack "ACE_DefusalKit";
 	for "_i" from 1 to 2 do {_player addItemToBackpack "LIB_US_M1A1_ATMINE_mag";};
 	for "_i" from 1 to 2 do {_player addItemToBackpack "LIB_Ladung_Big_MINE_mag";};
 	for "_i" from 1 to 5 do {_player addItemToBackpack "LIB_Ladung_Small_MINE_mag";};

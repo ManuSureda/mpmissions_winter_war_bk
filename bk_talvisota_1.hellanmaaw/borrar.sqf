@@ -451,3 +451,13 @@ deleteVehicle f_2_w_3_5;
  5, 7, SAC_UDS_O_G_Soldiers,   
  [15,20,30], 180, 60, -1   
 ] spawn SAC_fnc_waveAttack_v2;
+
+
+
+
+
+
+
+
+
+

@@ -177,12 +177,17 @@ getHMG = {
 					player removeWeapon "NORTH_SOV_Maxim_Gun_Bag_Lnr";
 
 					_maxim = "NORTH_FIN_S_Maxim_41" createVehicle position player;
-					_maxim setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)];
+
+					private _offset = (vectorDir player) vectorMultiply 2; // Desplazamiento de 2 metros al frente
+					private _newPos = (getPos player) vectorAdd _offset;
+					_maxim setPos _newPos;
+					_maxim setVectorDir (vectorDir player);
+					//_maxim setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)];
 
 					_maxim setVehicleAmmo 0;
 
-					_dir = vectorDir player;
-					_maxim setVectorDir _dir;
+					//_dir = vectorDir player;
+					//_maxim setVectorDir _dir;
 
 					_maxim addAction [ 
 						"desmontar", 
@@ -210,12 +215,17 @@ getHMG = {
 					player removeWeapon "NORTH_SOV_Maxim_Gun_Bag_Lnr"; 
 				
 					_maxim = "NORTH_FIN_S_41_Maxim_Medium" createVehicle position player; 
-					_maxim setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)];
+					
+					//_maxim setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)];
+					//_dir = vectorDir player;
+					//_maxim setVectorDir _dir;
 
-					_maxim setVehicleAmmo 0;
-				
-					_dir = vectorDir player;
-					_maxim setVectorDir _dir;
+					private _offset = (vectorDir player) vectorMultiply 2; // Desplazamiento de 2 metros al frente
+					private _newPos = (getPos player) vectorAdd _offset;
+					_maxim setPos _newPos;
+					_maxim setVectorDir (vectorDir player);
+
+					_maxim setVehicleAmmo 0;				
 
 					_maxim addAction [ 
 						"desmontar", 
@@ -256,12 +266,17 @@ getHAT = {
 					player removeWeapon "NORTH_Lahti_L39_Gun_Bag_Lnr";
 
 					_at = "NORTH_FIN_W_Lahti_L39" createVehicle position player;
-					_at setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)];
+					
+					//_at setPos [(getPos player select 0), (getPos player select 1) + 2, (getPos player select 2)];
+					//_dir = vectorDir player;
+					//_at setVectorDir _dir;
+
+					private _offset = (vectorDir player) vectorMultiply 2; // Desplazamiento de 2 metros al frente
+					private _newPos = (getPos player) vectorAdd _offset;
+					_at setPos _newPos;
+					_at setVectorDir (vectorDir player);
 
 					_at setVehicleAmmo 0;
-
-					_dir = vectorDir player;
-					_at setVectorDir _dir;
 
 					_at addAction [ 
 						"desmontar", 

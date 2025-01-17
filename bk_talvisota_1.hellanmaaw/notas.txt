@@ -1,0 +1,90 @@
+si borro los f_... 
+(como se borra sin intervencion)
+[cuanto tarda en pasar]
+que pasa
+
+f_c_1_start
+(llegar a Huhtala)
+[7 minutos]
+- inicia convoy_1
+
+
+{behaviour _x == "COMBAT"} count (units convoy_1 + units c_1_g_1) > 0
+- borra "gz_1" (en la zona huhtala) 
+- baja a las unidades de convoy_1
+
+
+f_c_2_start
+(cuando se destruye un vehiculo de convoy_1)
+[entre 1 y 3 minutos]
+da comienzo a convoy_2
+
+
+t_w_1 <-trigger sin flag
+(cuando convoy_2 entra en combate)
+- 3 grupos de 3 oleadas
+- flag_1_1 - flag_1_2 - flag_1_3
+
+
+!alive flag_1_1 && !alive flag_1_2 && !alive flag_1_3
+- manda mensaje de retirada
+- elimina flag_end_huhtala (necesario para dar comienzo a convoy_3)
+- comienza oleada constante con flag_1_4
+
+
+flag_1_4
+(al entrar en deonis y no exista flag_end_huhtala)
+
+al entrar en deonis con !alive flag_end_huhtala
+[30 a 60 s] sale el mensaje de convoy_3
+
+
+f_c_3_start
+(cuando se haya ejecutado el trigger del mensaje)
+[5 minutos]
+- da comienzo convoy_3
+
+
+t_w_2 <- trigger
+(convoy_3 entro en combate y !alive f_c_3_start)
+[1 min]
+- wave 2, 3 grupos, 3 oleadas
+- f_2_w_1_1 - f_2_w_1_2 - f_2_w_1_3
+
+
+f_c_4_pre_msg
+(o bien, eliminamos la wave_2 o pasaron 10 minutos de su creacion)
+- termina wave_2 por si no se habia terminado
+- manda mensaje de convoy_4 y marcadores
+
+
+f_c_4_start
+(!alive f_c_4_pre_msg)
+[5 min]
+da comienzo convoy_4
+
+
+t_w_3 <- trigger
+(al entrar en combate convoy_4)
+- wave 3 (kangas)
+- f_2_w_3_1 - f_2_w_3_2 - f_2_w_3_3 - f_2_w_3_4
+
+
+
+f_retreat_to_hoopaka
+(tras ejecutarse t_w_3)
+[15 min]
+- borra gz_6
+- mensaje de retirada a Hoopaka
+- genera una wave infinita f_2_w_3_5
+
+
+(al entrar en Hoopaka)
+[3 min]
+- deleteVehicle f_2_w_3_5 <- termina el wave infinito;
+- deleteVehicle f_w_4_start <- da comienzo el final wave;
+
+
+t_w_4
+(condicion anterior)
+f_3_w_1 - f_3_w_2 - f_3_w_3 - f_3_w_4
