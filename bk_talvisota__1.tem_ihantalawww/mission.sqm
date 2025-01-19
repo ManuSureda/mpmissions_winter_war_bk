@@ -1,0 +1,788 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=0.1;
+	autoGroupingDist=10;
+	toggles=65;
+	class ItemIDProvider
+	{
+		nextID=134;
+	};
+	class LayerIndexProvider
+	{
+		nextID=2;
+	};
+	class Camera
+	{
+		pos[]={1972.9055,16.628908,-12.474884};
+		dir[]={-0.46570557,-0.42691207,0.77515501};
+		up[]={-0.2198572,0.90429324,0.36594662};
+		aside[]={0.85719466,-1.9368599e-08,0.51499403};
+	};
+};
+binarizationWanted=0;
+sourceName="bk_talvisota_1";
+addons[]=
+{
+	"WW2_Assets_c_Weapons_Ammoboxes_c",
+	"WW2_Assets_c_Weapons_SimpleObjects_c",
+	"WW2_Core_c_WW2_EditorPreviews_c",
+	"A3_Characters_F",
+	"A3_Ui_F",
+	"WW2_Core_c_IF_Gui_c",
+	"M2_Flamethrower_Balloons",
+	"A3_Weapons_F_Ammoboxes",
+	"ace_cargo"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=9;
+		class Item0
+		{
+			className="WW2_Assets_c_Weapons_Ammoboxes_c";
+			name="WW2_Assets_c_Weapons_Ammoboxes_c";
+		};
+		class Item1
+		{
+			className="WW2_Assets_c_Weapons_SimpleObjects_c";
+			name="WW2_Assets_c_Weapons_SimpleObjects_c";
+		};
+		class Item2
+		{
+			className="WW2_Core_c_WW2_EditorPreviews_c";
+			name="WW2_Core_c_WW2_EditorPreviews_c";
+		};
+		class Item3
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="WW2_Core_c_IF_Gui_c";
+			name="WW2_Core_c_IF_Gui_c";
+		};
+		class Item6
+		{
+			className="M2_Flamethrower_Balloons";
+			name="M2_Flamethrower_Balloons";
+			author="PhoenixSystems";
+		};
+		class Item7
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item8
+		{
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+	};
+};
+randomSeed=14113328;
+class ScenarioData
+{
+	author="Fixer_97";
+};
+class CustomAttributes
+{
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.69999999;
+		startFog=0.30000001;
+		startWind=0.3000001;
+		startRain=1;
+		startWaves=0.1;
+		forecastWeather=0.69999999;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		wavesForced=1;
+		windForced=1;
+		year=1940;
+		month=3;
+		day=15;
+		hour=12;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=4;
+		class Item0
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1963.5811,2.5211639,3.5120001};
+				angles[]={0.010000736,0,6.2681928};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this addAction [ " \n " ""Soldado"", " \n " { " \n " [player] spawn dressAs_rifleman; " \n " }, nil, 1.5, true, true, """", ""true"", 7 " \n "]; " \n " " \n "this addAction [ " \n " ""Cabo"", " \n " { " \n " [player] spawn dressAs_private; " \n " }, nil, 1.5, true, true, """", ""true"", 7 " \n "]; " \n " " \n "this addAction [ " \n " ""Sargento"", " \n " { " \n " [player] spawn dressAs_sargent; " \n " }, nil, 1.5, true, true, """", ""true"", 7 " \n "];";
+			};
+			id=50;
+			type="LIB_AmmoCrates_NoInteractive_Large";
+			atlOffset=-2.3841858e-07;
+		};
+		class Item1
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1965.34,2.4936581,3.5861285};
+						angles[]={0,4.7956009,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayer=1;
+					};
+					id=52;
+					type="B_Competitor_F";
+					atlOffset=-7.1525574e-07;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=51;
+			atlOffset=-7.1525574e-07;
+		};
+		class Item2
+		{
+			dataType="Layer";
+			name="SCRIPT";
+			class Entities
+			{
+				items=41;
+				class Item0
+				{
+					dataType="Marker";
+					position[]={2128.0298,51.114937,2007.2402};
+					name="SAC_MAP_CENTER";
+					text="SAC_MAP_CENTER";
+					type="Empty";
+					id=63;
+					atlOffset=48.302032;
+				};
+				class Item1
+				{
+					dataType="Marker";
+					position[]={2691.4207,2.5134032,2416.1697};
+					name="SAC_green_zone";
+					text="SAC_green_zone";
+					markerType="ELLIPSE";
+					type="Empty";
+					colorName="ColorWEST";
+					fillName="Border";
+					a=60;
+					b=60;
+					drawBorder=1;
+					id=65;
+				};
+				class Item2
+				{
+					dataType="Marker";
+					position[]={2986.4626,12.610264,1775.4343};
+					name="marker_184";
+					text="PATROLS_FOOT@0@1@2";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorRed";
+					a=60;
+					b=60;
+					angle=1.3051506;
+					id=66;
+					atlOffset=10.204092;
+				};
+				class Item3
+				{
+					dataType="Marker";
+					position[]={3122.6931,12.443697,1771.5232};
+					name="marker_129";
+					text="FORTIFY@0@1@2";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorRed";
+					fillName="DiagGrid";
+					a=60;
+					b=60;
+					angle=1.1395261;
+					id=67;
+					atlOffset=10.204094;
+				};
+				class Item4
+				{
+					dataType="Marker";
+					position[]={2846.0515,14.468887,1779.366};
+					name="marker_27";
+					text="STATIC_GROUPS@0@.5@1";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorRed";
+					a=50;
+					b=50;
+					angle=61.013996;
+					id=68;
+					atlOffset=10.204092;
+				};
+				class Item5
+				{
+					dataType="Marker";
+					position[]={3252.3494,12.494875,1767.0466};
+					name="marker_130";
+					text="FORTIFY@0@1@2@F";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorRed";
+					fillName="DiagGrid";
+					a=60;
+					b=60;
+					angle=1.1024786;
+					id=72;
+					atlOffset=10.204298;
+				};
+				class Item6
+				{
+					dataType="Marker";
+					position[]={3382.7156,12.573168,1769.0769};
+					name="marker_131";
+					text="FORTIFY@0@1@2@H";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorRed";
+					fillName="DiagGrid";
+					a=60;
+					b=60;
+					angle=1.136266;
+					id=73;
+					atlOffset=10.20451;
+				};
+				class Item7
+				{
+					dataType="Marker";
+					position[]={2985.615,14.509328,1921.9402};
+					name="marker_185";
+					text="PATROLS_FOOT@0@1@2";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorGreen";
+					a=60;
+					b=60;
+					angle=0.47729322;
+					id=74;
+					atlOffset=10.204092;
+				};
+				class Item8
+				{
+					dataType="Marker";
+					position[]={3121.8464,11.408431,1918.0281};
+					name="marker_132";
+					text="FORTIFY@0@1@2";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorGreen";
+					fillName="DiagGrid";
+					a=60;
+					b=60;
+					angle=0.9563399;
+					id=75;
+					atlOffset=10.204091;
+				};
+				class Item9
+				{
+					dataType="Marker";
+					position[]={3251.5027,12.183174,1913.5525};
+					name="marker_133";
+					text="FORTIFY@0@1@2@F";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorGreen";
+					fillName="DiagGrid";
+					a=60;
+					b=60;
+					angle=1.0971096;
+					id=76;
+					atlOffset=10.20409;
+				};
+				class Item10
+				{
+					dataType="Marker";
+					position[]={3381.8689,16.631081,1915.5828};
+					name="marker_134";
+					text="FORTIFY@0@1@2@H";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorGreen";
+					fillName="DiagGrid";
+					a=60;
+					b=60;
+					angle=1.1244307;
+					id=77;
+					atlOffset=10.2043;
+				};
+				class Item11
+				{
+					dataType="Marker";
+					position[]={2845.2039,16.04883,1925.8718};
+					name="marker_28";
+					text="STATIC_GROUPS@0@.5@1";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorGreen";
+					a=50;
+					b=50;
+					angle=60.580421;
+					id=78;
+					atlOffset=10.204092;
+				};
+				class Item12
+				{
+					dataType="Marker";
+					position[]={3122.4792,13.586206,2045.2087};
+					name="marker_135";
+					text="FORTIFY@0@1@2";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorGreen";
+					a=60;
+					b=60;
+					angle=0.88571602;
+					id=79;
+					atlOffset=10.290674;
+				};
+				class Item13
+				{
+					dataType="Marker";
+					position[]={3128.2996,13.895832,2180.4207};
+					name="marker_136";
+					text="FORTIFY@0@1@2";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorGreen";
+					fillName="Horizontal";
+					a=60;
+					b=60;
+					angle=1.00635;
+					id=80;
+					atlOffset=10.204092;
+				};
+				class Item14
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={2836.3923,37.347813,1701.5105};
+						angles[]={0,1.0594962,0};
+					};
+					title="genera un grupo estatico de enemigos";
+					description="STATIC_GROUPS@0@.5@1" \n "1º @ -> no se lo que hace xD" \n "2º @ -> probabilidad de que sea true. en este caso (.5) quiere decir que hay un 50% de probabilidades de q se genere una unidad estatica en la zona." \n "3º @ -> cantidad de grupos, en este caso 1 solo grupo.";
+					id=81;
+					atlOffset=32.647514;
+				};
+				class Item15
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={2987.7849,35.517746,1700.5017};
+						angles[]={0,1.0543427,0};
+					};
+					title="genera patrulla, con un patron aleatoreo, dentro del area del circulo";
+					description="PATROLS_FOOT@0@1@2" \n "1º @ -> no se lo que hace xD" \n "2º @ -> probabilidad de que sea true. en este caso (1) quiere decir que hay un 100% de probabilidades de q se genere una unidad estatica en la zona." \n "3º @ -> cantidad de grupos, en este caso 2 grupos.";
+					id=82;
+					atlOffset=31.431259;
+				};
+				class Item16
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3119.907,36.136116,1838.6892};
+						angles[]={0,1.0529553,0};
+					};
+					title="IMPORTANTE: DEBEN SER CIRCULOS PERFECTOS";
+					id=83;
+					atlOffset=33.841274;
+				};
+				class Item17
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3128.9216,30.459888,1699.0115};
+						angles[]={0,1.0576205,0};
+					};
+					title="genera una guarnicion ";
+					description="FORTIFY@0@1@2" \n "1º @ -> no se lo que hace xD" \n "2º @ -> probabilidad de que sea true. " \n "3º @ -> cantidad de grupos." \n "" \n "toma todos los edificios que tengan interior y ademas posiciones marcadas (depende del edificio)  dentro del area del marcador y genera una fuerza de guarnicion." \n "" \n "DATOS OPCIONALES:" \n "podes usar un 4º @ que especifica la cantidad de unidades a generar como parte de cada guarnicion." \n " - @F -> (full) va a ocupar todas las posiciones posibles detnro de la casa. si la casa solo tiene 3 ventanas, va a generar un grupo con 3 unidades y los pone en cada ventana." \n " - @H -> (half) genera solo la mitad de unidades posibles." \n "(creo que tambien hay 3/4 o algo asi pero nunca la use jeje)" \n "" \n "TIPO DE RELLENADO:" \n "1º recordar de usar siempre circulos perfectos" \n "  -  si el marcador es de color ROJO va a usar las fuerzas enemigas regulares." \n "  -  si el marcador es de color VERDE va a usar las fuerzas enemigas guerrilleras." \n "  -  si el rellenado es ""SOLIDO"" la ia que esta adentro, PUEDE salir del edificio." \n "  -  si el rellenado es ""CUADRICULADO"" la ia que esta adentro, NO puede salir del edificio." \n "  -  si el rellenado es ""HORIZONTAL"" es aleatoreo, tal vez pueda salir o tal vez no.";
+					id=84;
+					atlOffset=28.052019;
+				};
+				class Item18
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3250.5583,44.805889,1699.9851};
+						angles[]={0,1.0576205,0};
+					};
+					title="genera una guarnicion  full";
+					description="FORTIFY@0@1@2" \n "1º @ -> no se lo que hace xD" \n "2º @ -> probabilidad de que sea true. " \n "3º @ -> cantidad de grupos." \n "" \n "toma todos los edificios que tengan interior y ademas posiciones marcadas (depende del edificio)  dentro del area del marcador y genera una fuerza de guarnicion." \n "" \n "DATOS OPCIONALES:" \n "podes usar un 4º @ que especifica la cantidad de unidades a generar como parte de cada guarnicion." \n " - @F -> (full) va a ocupar todas las posiciones posibles detnro de la casa. si la casa solo tiene 3 ventanas, va a generar un grupo con 3 unidades y los pone en cada ventana." \n " - @H -> (half) genera solo la mitad de unidades posibles." \n "(creo que tambien hay 3/4 o algo asi pero nunca la use jeje)";
+					id=85;
+					atlOffset=42.040386;
+				};
+				class Item19
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3380.9675,44.793888,1698.4304};
+						angles[]={0,1.0576205,0};
+					};
+					title="genera una guarnicion  half";
+					description="FORTIFY@0@1@2" \n "1º @ -> no se lo que hace xD" \n "2º @ -> probabilidad de que sea true. " \n "3º @ -> cantidad de grupos." \n "" \n "toma todos los edificios que tengan interior y ademas posiciones marcadas (depende del edificio)  dentro del area del marcador y genera una fuerza de guarnicion." \n "" \n "DATOS OPCIONALES:" \n "podes usar un 4º @ que especifica la cantidad de unidades a generar como parte de cada guarnicion." \n " - @F -> (full) va a ocupar todas las posiciones posibles detnro de la casa. si la casa solo tiene 3 ventanas, va a generar un grupo con 3 unidades y los pone en cada ventana." \n " - @H -> (half) genera solo la mitad de unidades posibles." \n "(creo que tambien hay 3/4 o algo asi pero nunca la use jeje)";
+					id=86;
+					atlOffset=42.571735;
+				};
+				class Item20
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3477.6462,44.967888,1759.6394};
+					};
+					title="toma el uds_normal";
+					id=87;
+					atlOffset=42.266705;
+				};
+				class Item21
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3468.2371,44.816887,1907.6667};
+					};
+					title="toma el uds_guerrilla";
+					id=88;
+					atlOffset=41.147041;
+				};
+				class Item22
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3141.8572,44.858887,1915.9949};
+					};
+					title="no pueden salir";
+					id=89;
+					atlOffset=42.255291;
+				};
+				class Item23
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3142.8445,44.834888,2044.7751};
+					};
+					title="pueden salir";
+					id=90;
+					atlOffset=41.870602;
+				};
+				class Item24
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3148.2722,44.885887,2178.4851};
+					};
+					title="tal vez salgan o tal vez no";
+					id=91;
+					atlOffset=41.007893;
+				};
+				class Item25
+				{
+					dataType="Marker";
+					position[]={2748.7156,438.45331,2492.0945};
+					name="SAC_FACR_base";
+					text="HIDE";
+					type="mil_flag";
+					angle=357.55521;
+					id=104;
+					atlOffset=435.70541;
+				};
+				class Item26
+				{
+					dataType="Marker";
+					position[]={2858.0408,13.509974,1478.5076};
+					name="marker_34";
+					text="MORTAR@PROB@DISPERSION@ROUNDS@DELAY@MAXSEARCHDISTANCE ";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorRed";
+					fillName="Border";
+					a=50;
+					b=50;
+					angle=0.21899983;
+					drawBorder=1;
+					id=127;
+					atlOffset=8.0090084;
+				};
+				class Item27
+				{
+					dataType="Marker";
+					position[]={2860.698,17.563473,1371.7761};
+					name="marker_35";
+					text="MORTAR@PROB@DISPERSION@ROUNDS@DELAY@MAXSEARCHDISTANCE ";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorGreen";
+					fillName="Border";
+					a=50;
+					b=50;
+					angle=0.21899982;
+					drawBorder=1;
+					id=128;
+					atlOffset=11.895242;
+				};
+				class Item28
+				{
+					dataType="Marker";
+					position[]={2859.6667,10.007198,1584.6228};
+					name="marker_30";
+					text="MORTAR@PROB@DISPERSION@ROUNDS@DELAY@MAXSEARCHDISTANCE ";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorBlue";
+					fillName="Border";
+					a=50;
+					b=50;
+					angle=0.21899985;
+					drawBorder=1;
+					id=114;
+					atlOffset=7.961544;
+				};
+				class Item29
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={2775.3894,44.876888,1569.1707};
+					};
+					title="funciones circulo perfecto solo borde";
+					description="MORTAR@PROB@DISPERSION@ROUNDS@DELAY@MAXSEARCHDISTANCE" \n "" \n "ARTY@PROB@DISPERSION@ROUNDS@DELAY@MAXSEARCHDISTANCE" \n "" \n "SENDINFANTRY@PROB@SQUADS@WAVES@DELAY@WAVEDELAY" \n "" \n "SENDMOTORINFANTRY@PROB@SQUADS@WAVES@DELAY@WAVEDELAY" \n "" \n "SENDHELIINFANTRY@PROB@SQUADS@WAVES@DELAY@WAVEDELAY" \n "" \n "SENDTECHNICALS@PROB@SQUADS@WAVES@DELAY@WAVEDELAY" \n "" \n "SENDAPC@PROB@SQUADS@WAVES@DELAY@WAVEDELAY" \n "" \n "SENDIFV@PROB@SQUADS@WAVES@DELAY@WAVEDELAY" \n "" \n "SENDTANK@PROB@SQUADS@WAVES@DELAY@WAVEDELAY";
+					id=115;
+					atlOffset=41.8703;
+				};
+				class Item30
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={2865.4773,45.08889,1573.2283};
+					};
+					title="caen morteros";
+					id=116;
+					atlOffset=43.108559;
+				};
+				class Item31
+				{
+					dataType="Marker";
+					position[]={2975.3845,10.777241,1587.0437};
+					name="marker_31";
+					text="ARTY@PROB@DISPERSION@ROUNDS@DELAY@MAXSEARCHDISTANCE";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorBlue";
+					fillName="Border";
+					a=50;
+					b=50;
+					angle=0.21899983;
+					drawBorder=1;
+					id=117;
+					atlOffset=7.6846886;
+				};
+				class Item32
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={2973.9675,70.613403,1572.6042};
+					};
+					title="artilleria";
+					id=118;
+					atlOffset=67.653404;
+				};
+				class Item33
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={2774.5779,44.95089,1589.8699};
+					};
+					title="cada color significa lo siguiente:";
+					description="ColorRed = se activa cuando no hay mas unidades del SAC_O_REGULAR_SIDE" \n "ColorGreen = se activa cuando no hay mas unidades del SAC_O_MILITIA_SIDE" \n "ColorBlue = se activa cuando ingresan unidades del SAC_PLAYER_SIDE";
+					id=119;
+					atlOffset=42.381828;
+				};
+				class Item34
+				{
+					dataType="Marker";
+					position[]={3133.9939,12.467419,1585.4607};
+					name="marker_32";
+					text="SENDTANK@PROB@SQUADS@WAVES@DELAY@WAVEDELAY";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorBlue";
+					fillName="Border";
+					a=50;
+					b=50;
+					angle=0.21899982;
+					drawBorder=1;
+					id=120;
+					atlOffset=9.5420256;
+				};
+				class Item35
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3140.532,44.876888,1578.9451};
+					};
+					title="ataque con tanques";
+					id=121;
+					atlOffset=41.820469;
+				};
+				class Item36
+				{
+					dataType="Marker";
+					position[]={3136.3123,13.184607,1474.1052};
+					name="marker_33";
+					text="SENDINFANTRY@1@2@2@60@30";
+					markerType="ELLIPSE";
+					type="ellipse";
+					colorName="ColorBlue";
+					fillName="Border";
+					a=50;
+					b=50;
+					angle=0.2189998;
+					drawBorder=1;
+					id=122;
+					atlOffset=10.816821;
+				};
+				class Item37
+				{
+					dataType="Comment";
+					class PositionInfo
+					{
+						position[]={3136.4148,57.406887,1452.1687};
+					};
+					title="ataque de infanteria";
+					description="si yo tengo esto:" \n "SENDINFANTRY@PROB@SQUADS@WAVES@DELAY@WAVEDELAY" \n "SENDINFANTRY@1@2@2@60@30" \n "" \n "quiere decir que genera un trigger, con el tamaño del marcador." \n "su condicion de activacion depende del color, al ser azul, sera cuando cualquier unidad del mismo tipo que SAC_PLAYER_SIDE (parameters) entre en la zona." \n "" \n "- @PROB = 1 -> 100% de probabilidad de que pase, 0.5 -> 50% de probabilidad." \n "- @SQUADS = 2 -> generara 2 escuadras enemigas por oleada." \n "- @WAVES = 2 -> genera 2 oleadas de, en este caso, 2 escuadras cada una." \n "- @DELAY = 60 -> una vez que se cumple la condicion (cualquier player dentro de la zona) espera esa cantidad de segundos para ejecutar la primer oleada." \n "- @WAVEDELAY = 30 -> el tiempo en segundos entre oleada y oleada." \n "" \n "entonces, en este marcador, cuando cualquier unidad del mismo bando q player entre en la zona, va a esperar 60 segundos, genera 2 escuadras y les da la orden de atacar la zona central, espera 30 segundos y genera otras 2 escuadras y tambien las envia al ataque." \n "";
+					id=123;
+					atlOffset=55.226887;
+				};
+				class Item38
+				{
+					dataType="Marker";
+					position[]={3917.2627,3.2755098,3875.7334};
+					name="SAC_COP_unitsSpawn";
+					text="SAC_COP_unitsSpawn";
+					type="Empty";
+					id=130;
+					atlOffset=0.58751178;
+				};
+				class Item39
+				{
+					dataType="Marker";
+					position[]={1946.734,160.912,84.086998};
+					name="respawn_west";
+					type="Empty";
+					id=131;
+					atlOffset=158.382;
+				};
+				class Item40
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1968.2483,3.3384929,6.3005371};
+						angles[]={0.0049914722,3.7835248,6.2731848};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="this setVariable [""SAC_GEAR_INITIALIZED"", true, true]; " \n "this setVariable [""SAC_interact_arsenal"", true, true];";
+					};
+					id=132;
+					type="B_supplyCrate_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F"",""FirstAidKit""],[1,2,1,10]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2]],[[""Laserdesignator"",""acc_flashlight"",""bipod_01_F_blk""],[1,2,1]],[[""B_Kitbag_mcamo""],[2]]],false]";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			id=129;
+			atlOffset=41.529377;
+		};
+		class Item3
+		{
+			dataType="Trigger";
+			position[]={1953.6041,2.5880513,8.0527344};
+			class Attributes
+			{
+				sizeA=0;
+				sizeB=0;
+			};
+			id=133;
+			type="EmptyDetector";
+		};
+	};
+};
